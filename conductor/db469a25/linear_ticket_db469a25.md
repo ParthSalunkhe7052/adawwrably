@@ -1,7 +1,7 @@
 ---
 id: db469a25
 title: "Phase 1: Foundation - Project Setup & Design System"
-status: "Ready for Dev"
+status: Done
 priority: High
 order: 10
 created: 2026-04-01

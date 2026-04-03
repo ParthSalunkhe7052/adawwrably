@@ -1,7 +1,7 @@
 ---
 id: 01c2bf34
 title: "[Epic] Adawwrably Landing Page Implementation"
-status: Backlog
+status: Done
 priority: High
 order: 0
 created: 2026-04-01
