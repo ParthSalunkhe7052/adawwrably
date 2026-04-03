@@ -3,7 +3,7 @@ import { SectionHeading } from '@/components/shared/SectionHeading';
 
 export function Collections() {
   return (
-    <section id="collections" className="relative py-24 px-0 overflow-hidden">
+    <section id="collections" className="relative py-14 md:py-24 px-0 overflow-hidden">
       {/* Background Image with Blending */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-fixed bg-no-repeat"

@@ -4,7 +4,7 @@ import { SectionHeading } from '@/components/shared/SectionHeading';
 
 export function LatestDrops() {
   return (
-    <section id="latest-drops" className="relative py-24 px-6 overflow-hidden">
+    <section id="latest-drops" className="relative py-14 md:py-24 px-4 md:px-6 overflow-hidden">
       {/* Background Image with Blending */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-fixed bg-no-repeat"
@@ -19,7 +19,7 @@ export function LatestDrops() {
           subtitle="Fresh merch, straight from Japan"
         />
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5">
           {products.slice(0, 8).map((product) => (
             <ProductFlipCard key={product.id} product={product} />
           ))}

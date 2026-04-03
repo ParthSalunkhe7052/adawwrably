@@ -40,7 +40,7 @@ export function Navbar() {
             <img
               src="/Logo.png"
               alt="Adawwrably"
-              className="h-10 w-auto object-contain"
+              className="h-8 md:h-10 w-auto object-contain"
               onError={(e) => {
                 const el = e.currentTarget as HTMLImageElement;
                 el.style.display = 'none';

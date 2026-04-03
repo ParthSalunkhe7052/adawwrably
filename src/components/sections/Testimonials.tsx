@@ -64,7 +64,7 @@ const thirdColumn = testimonials.slice(6, 9);
 
 export function Testimonials() {
   return (
-    <section className="relative py-[var(--spacing-section)] px-[var(--container-padding)] overflow-hidden">
+    <section className="relative py-14 md:py-[var(--spacing-section)] px-4 md:px-[var(--container-padding)] overflow-hidden">
       {/* Background Image with Blending */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-scroll md:bg-fixed bg-no-repeat"
@@ -96,14 +96,14 @@ export function Testimonials() {
           viewport={{ once: true }}
           className="flex items-center justify-center max-w-[760px] mx-auto pt-8 pb-2 md:pt-12 md:pb-4"
         >
-          <div className="inline-block backdrop-blur-[8px] bg-black/20 border border-white/10 px-8 py-4 rounded-3xl shadow-lg">
+          <div className="inline-block backdrop-blur-[8px] bg-black/20 border border-white/10 px-5 py-3 md:px-8 md:py-4 rounded-3xl shadow-lg">
             <h2 className="font-['Bebas_Neue'] text-center uppercase leading-none tracking-[0.06em] text-white text-[clamp(2.35rem,5.8vw,4.25rem)] mb-0">
               What our fans say
             </h2>
           </div>
         </motion.div>
 
-        <div className="flex justify-center gap-6 mt-0 h-[600px] overflow-hidden">
+        <div className="flex justify-center gap-4 md:gap-6 mt-0 h-[400px] md:h-[600px] overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
           <TestimonialsColumn testimonials={secondColumn} className="hidden md:flex" duration={19} />
           <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:flex" duration={17} />

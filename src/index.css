@@ -206,6 +206,13 @@
   transform: translateY(0);
 }
 
+@media (hover: none) {
+  .product-card__overlay {
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 40%, transparent 100%);
+  }
+}
+
 .product-card__cta {
   width: 100%;
   font-family: 'Inter', sans-serif;

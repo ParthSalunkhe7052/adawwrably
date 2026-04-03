@@ -77,7 +77,7 @@ export function HeroSection() {
         </p>
 
         {/* Spacer for embedded image text */}
-        <div style={{ height: 'min(42vh, 430px)' }} />
+        <div className="h-[25vh] md:h-[430px]" />
 
         {/* CTA Button */}
         <a href="#latest-drops" className="inline-block relative z-20 mt-10 md:mt-12">
