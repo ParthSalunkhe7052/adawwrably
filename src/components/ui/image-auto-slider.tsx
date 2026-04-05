@@ -7,7 +7,7 @@ export const ImageAutoSlider = () => {
   const duplicatedCollections = [...collections, ...collections, ...collections];
 
   return (
-    <div className="w-full relative overflow-hidden flex items-center justify-center py-20 bg-background">
+    <div className="w-full relative overflow-hidden flex items-center justify-center py-20 bg-transparent">
       {/* Scroll container */}
       <div className="w-full relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
         <motion.div 

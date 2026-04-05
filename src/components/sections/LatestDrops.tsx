@@ -4,15 +4,7 @@ import { SectionHeading } from '@/components/shared/SectionHeading';
 
 export function LatestDrops() {
   return (
-    <section id="latest-drops" className="relative py-14 md:py-24 px-4 md:px-6 overflow-hidden">
-      {/* Background Image with Blending */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-fixed bg-no-repeat"
-        style={{ backgroundImage: "url('/hero3.png')" }}
-      />
-      {/* Gradient overlay for seamless blending with other sections */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-background via-background/80 to-background" />
-
+    <section id="latest-drops" className="relative py-14 md:py-24 px-4 md:px-6 overflow-hidden bg-transparent">
       <div className="relative z-10 max-w-[1400px] mx-auto">
         <SectionHeading
           title="Latest Drops"

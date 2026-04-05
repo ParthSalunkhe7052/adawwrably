@@ -1,6 +1,9 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Separator } from '@/components/ui/separator';
 import { type LucideIcon } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
+import { ImageWithFallback } from '@/components/shared/ImageWithFallback';
+import { cn } from '@/lib/utils';
 
 interface MobileMenuProps {
   open: boolean;
@@ -15,32 +18,27 @@ export function MobileMenu({ open, onClose, navLinks, socialLinks }: MobileMenuP
       <SheetContent side="right" className="bg-background border-border w-full sm:w-80">
         <SheetHeader>
           <SheetTitle>
-            <img 
+            <ImageWithFallback 
               src="/Logo.png" 
               alt="Adawwrably" 
               className="h-10 w-auto" 
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src = 'https://placehold.co/100x40/000000/ffffff?text=LOGO';
-              }}
             />
           </SheetTitle>
         </SheetHeader>
 
         <nav className="flex flex-col gap-1 mt-8">
           {navLinks.map((link) => (
-            <a
+            <NavLink
               key={link.label}
-              href={link.href}
+              to={link.href}
               onClick={onClose}
-              className="
-                py-3 px-4 text-lg font-sans font-medium uppercase tracking-wider
-                text-foreground hover:text-primary hover:bg-muted
-                rounded-lg transition-all duration-200
-                cursor-pointer
-              "
+              className={({ isActive }) => cn(
+                "py-3 px-4 text-lg font-sans font-medium uppercase tracking-wider rounded-lg transition-all duration-200 cursor-pointer",
+                isActive ? "text-primary bg-primary/10" : "text-foreground hover:text-primary hover:bg-muted"
+              )}
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 

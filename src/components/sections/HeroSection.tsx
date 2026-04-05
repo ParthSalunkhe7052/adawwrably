@@ -1,53 +1,18 @@
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { FlowButton } from '@/components/ui/flow-button';
-import { ShaderAnimation } from '@/components/ui/shader-animation';
 
 export function HeroSection() {
   const { scrollY } = useScrollPosition();
 
-  // Parallax: background moves up at 0.15x scroll speed (subtle)
-  const bgOffset = scrollY * 0.15;
   // Fade out hero content as user scrolls
   const opacity = Math.max(0, 1 - scrollY / 550);
 
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden flex items-center justify-center"
+      className="relative w-full overflow-hidden flex items-center justify-center bg-transparent"
       style={{ minHeight: '100dvh' }}
     >
-      {/* ── Layer 1: Background Image ── */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage: "url('/cute-hero.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat',
-          transform: `translate3d(0, ${bgOffset}px, 0)`,
-          willChange: 'transform',
-          backgroundColor: '#08080f',
-        }}
-      />
-
-      {/* ── Layer 1.5: Shader Animation Overlay ── */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          transform: `translate3d(0, ${bgOffset}px, 0)`,
-          willChange: 'transform',
-          mixBlendMode: 'screen',
-          backgroundColor: 'transparent',
-          pointerEvents: 'none',
-        }}
-      >
-        <ShaderAnimation />
-      </div>
-
       {/* ── Layer 3: Content ── */}
       <div
         className="relative z-10 text-center px-6 flex flex-col items-center justify-start h-full pt-24 md:pt-28"
@@ -77,10 +42,10 @@ export function HeroSection() {
         </p>
 
         {/* Spacer for embedded image text */}
-        <div className="h-[25vh] md:h-[430px]" />
+        <div className="h-[20vh] md:h-[350px]" />
 
         {/* CTA Button */}
-        <a href="#latest-drops" className="inline-block relative z-20 mt-10 md:mt-12">
+        <a href="#latest-drops" className="inline-block relative z-20 mt-6 md:mt-8">
           <FlowButton text="SHOP NOW" />
         </a>
       </div>

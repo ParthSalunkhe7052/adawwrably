@@ -3,25 +3,26 @@ import { Button } from '@/components/ui/button';
 import { ShoppingCart } from 'lucide-react';
 import { formatPrice } from '@/lib/utils';
 import type { Product } from '@/data/products';
+import { useCart } from '@/context/CartContext';
+import { Link } from 'react-router-dom';
+import { ImageWithFallback } from '@/components/shared/ImageWithFallback';
 
 interface ProductFlipCardProps {
   product: Product;
 }
 
 export function ProductFlipCard({ product }: ProductFlipCardProps) {
+  const { addItem } = useCart();
+
   return (
-    <div className="product-card group cursor-pointer" style={{ aspectRatio: '3/4' }}>
+    <Link to={`/product/${product.id}`} className="product-card group cursor-pointer block" style={{ aspectRatio: '3/4' }}>
       {/* Image container */}
       <div className="product-card__image-wrap">
-        <img
+        <ImageWithFallback
           src={product.image}
           alt={product.name}
           className="product-card__image"
           loading="lazy"
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src =
-              'https://placehold.co/400x533/0d0d1a/ffffff?text=No+Image';
-          }}
         />
 
         {/* Hover overlay — slides up from bottom */}
@@ -29,7 +30,11 @@ export function ProductFlipCard({ product }: ProductFlipCardProps) {
           <Button
             size="sm"
             className="product-card__cta"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              addItem(product);
+            }}
           >
             <ShoppingCart className="h-3.5 w-3.5 mr-1.5" />
             Add to Cart
@@ -67,6 +72,6 @@ export function ProductFlipCard({ product }: ProductFlipCardProps) {
           <span className="product-card__price">{formatPrice(product.price)}</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

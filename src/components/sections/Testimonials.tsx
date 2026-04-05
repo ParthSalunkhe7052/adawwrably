@@ -3,73 +3,108 @@ import { motion } from "motion/react";
 
 const testimonials: Testimonial[] = [
   {
+    type: "text",
     text: "The quality of the Luffy Gear 5 shirt is insane. The print hasn't faded even after multiple washes. Best anime merch store in India!",
     image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=150",
     name: "Rahul Sharma",
     role: "Verified Buyer",
   },
   {
+    type: "image",
+    src: "/customers/image.png",
+    alt: "Happy customer",
+  },
+  {
+    type: "text",
     text: "Got the Zoro Enma sword keychain and it's incredibly detailed. Shipping was super fast too. Highly recommended for One Piece fans.",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150",
     name: "Priya Patel",
     role: "Verified Buyer",
   },
   {
+    type: "image",
+    src: "/customers/image copy.png",
+    alt: "Happy customer showing merch",
+  },
+  {
+    type: "text",
     text: "Adawwrably is my go-to for all my anime figures. The Kakashi figure I ordered was authentic and packaged perfectly.",
     image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=150",
     name: "Aryan Khan",
     role: "Collector",
   },
   {
+    type: "image",
+    src: "/customers/image copy 2.png",
+    alt: "Customer photo",
+  },
+  {
+    type: "text",
     text: "I was looking for a good Gojo plushie everywhere and finally found it here. Customer support was very helpful with my sizing questions.",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150",
     name: "Neha Gupta",
     role: "Verified Buyer",
   },
   {
+    type: "image",
+    src: "/customers/image copy 3.png",
+    alt: "Customer reviewing item",
+  },
+  {
+    type: "text",
     text: "Their Demon Slayer apparel collection is fire! The fabric is premium and comfortable. Will definitely buy again.",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150",
     name: "Vikram Singh",
     role: "Verified Buyer",
   },
   {
+    type: "image",
+    src: "/customers/image copy 4.png",
+    alt: "Customer wearing merch",
+  },
+  {
+    type: "text",
     text: "Finally an Indian store that sells high-quality anime merch without crazy import fees. The Akatsuki ring looks great.",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150",
     name: "Anjali Desai",
     role: "Verified Buyer",
   },
   {
+    type: "image",
+    src: "/customers/image copy 5.png",
+    alt: "Customer product photo",
+  },
+  {
+    type: "text",
     text: "The Saitama hoodie is so comfortable. I've gotten so many compliments on it already. Keep dropping new stuff!",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150",
     name: "Rohan Verma",
     role: "Verified Buyer",
   },
   {
+    type: "text",
     text: "I bought the Spirited Away wall art for my room and the colors are vibrant and beautiful. Really elevates the whole aesthetic.",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150",
     name: "Kavya Iyer",
     role: "Verified Buyer",
   },
   {
+    type: "text",
     text: "Amazing selection of Jujutsu Kaisen merch. The website was easy to use and my order arrived within 3 days.",
     image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&q=80&w=150",
     name: "Karan Mehta",
     role: "Verified Buyer",
-  },
+  }
 ];
 
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
+const firstColumn = testimonials.slice(0, 5);
+const secondColumn = testimonials.slice(5, 10);
+const thirdColumn = testimonials.slice(10, 15);
 
 export function Testimonials() {
   return (
-    <section className="relative py-14 md:py-[var(--spacing-section)] px-4 md:px-[var(--container-padding)] overflow-hidden">
-      {/* Background Image with Blending */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-scroll md:bg-fixed bg-no-repeat"
-        style={{ backgroundImage: "url('/hero4.png')" }}
-      />
+    <section className="relative py-[var(--spacing-section)] px-[var(--container-padding)] overflow-hidden">
+      {/* Background Image with Blending - Removed */}
       {/* Soft center feather to hide visible seam/artifact in the background artwork */}
       <div
         aria-hidden="true"
@@ -94,19 +129,21 @@ export function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className="flex items-center justify-center max-w-[760px] mx-auto pt-8 pb-2 md:pt-12 md:pb-4"
+          className="flex items-center justify-center max-w-[760px] mx-auto py-8 md:py-12"
         >
           <div className="inline-block backdrop-blur-[8px] bg-black/20 border border-white/10 px-5 py-3 md:px-8 md:py-4 rounded-3xl shadow-lg">
-            <h2 className="font-['Bebas_Neue'] text-center uppercase leading-none tracking-[0.06em] text-white text-[clamp(2.35rem,5.8vw,4.25rem)] mb-0">
+            <h2 className="font-display text-center uppercase leading-none tracking-[0.06em] text-white text-[clamp(2.35rem,5.8vw,4.25rem)]">
               What our fans say
             </h2>
           </div>
         </motion.div>
-
-        <div className="flex justify-center gap-4 md:gap-6 mt-0 h-[400px] md:h-[600px] overflow-hidden">
-          <TestimonialsColumn testimonials={firstColumn} duration={15} />
-          <TestimonialsColumn testimonials={secondColumn} className="hidden md:flex" duration={19} />
-          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:flex" duration={17} />
+        <div className="flex justify-center gap-6 mt-6 h-[800px] overflow-hidden mask-image-vertical-gradient">
+          <TestimonialsColumn testimonials={testimonials} className="md:hidden" duration={35} />
+          <TestimonialsColumn testimonials={firstColumn} className="hidden md:flex lg:hidden" duration={20} />
+          <TestimonialsColumn testimonials={secondColumn} className="hidden md:flex lg:hidden" duration={24} />
+          <TestimonialsColumn testimonials={firstColumn} className="hidden lg:flex" duration={20} />
+          <TestimonialsColumn testimonials={secondColumn} className="hidden lg:flex" duration={24} />
+          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:flex" duration={22} />
         </div>
       </div>
     </section>
